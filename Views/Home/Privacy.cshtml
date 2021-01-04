@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<div class="page-container login-container fadeIn second">
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="modal-body customer-box">
+
+                <form id="frmDefault" runat="server">
+                    <div class="justify-content-center">
+                        <div class="text-center">
+                            <div class="border-slate-300 text-slate-300">
+                                <img src="App_Themes/Default/TRAC/LOGO_TRAC.png" height="50" width="100" />
+                            </div>
+                            <h5 class="content-group">Login Thai Rent A Car</h5>
+                        </div>
+
+                        <div class="form-group justify-content-center">
+
+                            <asp:TextBox ID="txtUserName" runat="server" SkinID="textBoxHalf" CssClass="form-control custom-input" placeholder="Username" required="required" Width="347px"></asp:TextBox>
+                            <div class="form-control-feedback">
+                                <i class="icon-user text-muted"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group justify-content-center">
+
+                            <asp:TextBox ID="txtPassword" CssClass="form-control custom-input" placeholder="Password" runat="server" SkinID="textBoxHalf" TextMode="Password" required="required" Width="348px"></asp:TextBox>
+                            <div class="form-control-feedback">
+                                <i class="icon-lock2 text-muted"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <asp:Button ID="loginButton" CssClass="btn bg-blue btn-block custom-input" runat="server" Text="Log In" SkinID="button" Width="32%" OnClick="loginButton_Click" />
+
+                        </div>
+
+                    </div>
+                </form>
+                </div></div></div></div>

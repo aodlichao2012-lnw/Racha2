@@ -1,0 +1,17 @@
+﻿@model Racha1school.Models.Login
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <form asp-action="Sigin" asp-controller="Login" method="post">
+                <input asp-for="name" type="text" id="login" class="fadeIn second" name="login" placeholder="login" />
+                <input asp-for="password" type="text" id="password" class="fadeIn third pass" name="login" placeholder="password" />
+                <input  type="submit" class="fadeIn fourth" value="Log In" />
+                <div><a class="fadeIn fourth" asp-action="Resgister" asp-controller="Login">Register</a></div>
+            </form>
+
+        </div>
+        </div>
+
+

@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Racha1school</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="bg-dark">
+    <header>
+        @using Microsoft.AspNetCore.Http;
+        @{
+            var a = Context.Session.GetString("user");
+            var b = Context.Session.GetString("pass");
+        }
+        @if (a != null && b != null)
+        {
+            <nav class="navbar navbar-expand-lg navbar-light bg-light-g">
+
+                @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        @*<li class="nav-item active">
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Racha1school</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="~/img/racha.png" width="30" height="30" alt="">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">ประวัติโรงเรียน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">แนะนำโรงเรียน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">แนะนำบุคลากร</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">แนะนำนักเรียน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">วิธีใช้งาน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">เกี่ยวกับ</a>
+
+
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" asp-controller="Login" asp-action="Search">
+
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <form>
+                        <button class="btn btn-outline-success m-2" asp-area="" asp-controller="Home" asp-action="Index" type="submit">ออกจากระบบ</button>
+                    </form>
+
+                </div>
+            </nav>
+        }
+        else
+        {
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light-g">
+
+                @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        @*<li class="nav-item active">
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Racha1school</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="~/img/racha.png" width="30" height="30" alt="">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">ประวัติโรงเรียน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">แนะนำโรงเรียน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">แนะนำบุคลากร</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">แนะนำนักเรียน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">วิธีใช้งาน</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">เกี่ยวกับ</a>
+
+
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0" asp-controller="Login" asp-action="Search">
+
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <form>
+                        <button class="btn btn-outline-success m-2" asp-area="" asp-controller="Login" asp-action="Index" type="submit">เข้าสู่ระบบ</button>
+                    </form>
+                </div>
+            </nav>
+
+        }
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - โรงเรียนบางปะอิน ราชานุเคราะห์ ๑ - <a asp-area="" asp-controller="Home" asp-action="Privacy">ผู้จัดทำ</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
